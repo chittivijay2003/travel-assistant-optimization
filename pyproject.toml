@@ -1,0 +1,58 @@
+[project]
+name = "travel-assistant-optimization"
+version = "0.1.0"
+description = "AI-powered travel assistant for optimizing travel planning and recommendations"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    {name = "Travel Assistant Team", email = "team@travelassistant.com"},
+]
+license = {text = "MIT"}
+keywords = ["travel", "ai", "optimization", "assistant", "planning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Scheduling",
+]
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "requests>=2.32.5",
+    "matplotlib>=3.10.7",
+    "numpy>=2.3.5",
+    "pandas>=2.3.3",
+    "rich>=13.5.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.11.0",
+    "pytest>=9.0.1",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.6.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/chittivijay2003/travel-assistant-optimization"
+Repository = "https://github.com/chittivijay2003/travel-assistant-optimization.git"
+Issues = "https://github.com/chittivijay2003/travel-assistant-optimization/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+select = ["E", "W", "F", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--cov=travel_assistant", "--cov-report=term-missing"]
