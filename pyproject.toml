@@ -23,6 +23,31 @@ dependencies = [
     "numpy>=2.3.5",
     "pandas>=2.3.3",
     "rich>=13.5.0",
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.4.0",
+    "pydantic-settings>=2.0.0",
+    "google-generativeai>=0.3.0",
+    "mem0ai>=0.0.8",
+    "redis>=5.0.0",
+    "langchain>=0.1.0",
+    "langchain-core>=0.1.0",
+    "langchain-google-genai>=0.0.7",
+    "langgraph>=0.0.40",
+    "streamlit>=1.28.0",
+    "plotly>=5.17.0",
+    "loguru>=0.7.0",
+    "httpx>=0.25.0",
+    "sentence-transformers>=2.2.0",
+    "scikit-learn>=1.3.0",
+    "aiofiles>=23.2.0",
+    "python-multipart>=0.0.6",
+    "jinja2>=3.1.2",
+    "pyjwt>=2.8.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-jose[cryptography]>=3.3.0",
+    "asyncio>=3.4.3",
+    "nest-asyncio>=1.5.0",
 ]
 
 [dependency-groups]
@@ -30,8 +55,12 @@ dev = [
     "black>=25.11.0",
     "pytest>=9.0.1",
     "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.21.0",
     "mypy>=1.6.0",
     "ruff>=0.1.0",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.25.0",
+    "notebook>=7.0.0",
 ]
 
 [project.urls]
@@ -42,6 +71,9 @@ Issues = "https://github.com/chittivijay2003/travel-assistant-optimization/issue
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["travel_assistant"]
 
 [tool.black]
 line-length = 88
