@@ -2,10 +2,25 @@
 
 A sophisticated AI-powered travel planning system featuring intelligent memory management, semantic caching, and multi-model AI comparison capabilities.
 
+🔗 **Live Dashboard**: [http://localhost:8000](http://localhost:8000)  
+📦 **Repository**: [https://github.com/chittivijay2003/travel-assistant-optimization](https://github.com/chittivijay2003/travel-assistant-optimization)  
+📖 **API Documentation**: [http://localhost:8000/docs](http://localhost:8000/docs)
+
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)
 ![License](https://img.shields.io/badge/license-Enterprise-blue.svg)
 ![Status](https://img.shields.io/badge/status-Production%20Ready-success.svg)
+
+## 🚀 Quick Access
+
+| Resource | URL | Description |
+|----------|-----|-------------|
+| **🏠 Dashboard** | [http://localhost:8000](http://localhost:8000) | Main application interface |
+| **📖 API Docs** | [http://localhost:8000/docs](http://localhost:8000/docs) | Interactive API documentation |
+| **💬 Chat Interface** | [http://localhost:8000/chat](http://localhost:8000/chat) | Web-based chat for travel assistance |
+| **🔍 Health Check** | [http://localhost:8000/health](http://localhost:8000/health) | System status and diagnostics |
+| **📊 Metrics** | [http://localhost:8000/metrics](http://localhost:8000/metrics) | Performance analytics |
+| **📦 Repository** | [GitHub](https://github.com/chittivijay2003/travel-assistant-optimization) | Source code and documentation |
 
 ## 🌟 Features
 
@@ -56,8 +71,8 @@ A sophisticated AI-powered travel planning system featuring intelligent memory m
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-org/enterprise-travel-assistant.git
-cd enterprise-travel-assistant
+git clone https://github.com/chittivijay2003/travel-assistant-optimization.git
+cd travel-assistant-optimization
 ```
 
 2. **Install dependencies**
@@ -360,8 +375,9 @@ This project is licensed under the Enterprise License - see the [LICENSE](LICENS
 ## 🆘 Support
 
 - **Documentation**: [API Docs](http://localhost:8000/docs)
-- **Issues**: [GitHub Issues](https://github.com/your-org/enterprise-travel-assistant/issues)
-- **Email**: support@enterprise-ai.com
+- **Issues**: [GitHub Issues](https://github.com/chittivijay2003/travel-assistant-optimization/issues)
+- **Repository**: [GitHub](https://github.com/chittivijay2003/travel-assistant-optimization)
+- **Dashboard**: [Live App](http://localhost:8000)
 
 ---
 
