@@ -236,25 +236,70 @@ class EnterpriseMemoryManager:
                         "message": "No relevant memories found",
                     }
             else:
-                # Fallback search - only search this user's memories
+                # Fallback search - improved semantic search for this user's memories
                 relevant_memories = []
                 for key, memory in self.fallback_memory.items():
                     # Only check memories for this specific user
                     if (
-                        key.startswith(f"{self.user_id}_")
-                        and memory.get("user_id") == self.user_id
+                        key.startswith(f"{effective_user_id}_")
+                        and memory.get("user_id") == effective_user_id
                     ):
-                        if any(
-                            term.lower() in memory["text"].lower()
-                            for term in query.lower().split()
-                        ):
+                        memory_text = memory["text"].lower()
+                        query_lower = query.lower()
+
+                        # Enhanced search - check for direct matches and context
+                        direct_match = any(
+                            term.lower() in memory_text for term in query.split()
+                        )
+
+                        # Location context awareness - if query is about activities/services
+                        # look for location mentions in previous memories
+                        location_context = False
+                        if query_lower in [
+                            "movies",
+                            "entertainment",
+                            "theaters",
+                            "cinemas",
+                            "shows",
+                        ]:
+                            # Look for location mentions in this memory
+                            cities = [
+                                "hyderabad",
+                                "mumbai",
+                                "delhi",
+                                "bangalore",
+                                "chennai",
+                                "kolkata",
+                                "pune",
+                            ]
+                            location_context = any(
+                                city in memory_text for city in cities
+                            )
+
+                        if direct_match or location_context:
                             relevant_memories.append(memory["text"])
+
+                # Also add all recent memories for better context (last 3)
+                user_memories = [
+                    memory
+                    for key, memory in self.fallback_memory.items()
+                    if key.startswith(f"{effective_user_id}_")
+                    and memory.get("user_id") == effective_user_id
+                ]
+                if user_memories and len(relevant_memories) == 0:
+                    # If no specific matches, include recent memories for context
+                    recent_memories = sorted(
+                        user_memories,
+                        key=lambda x: x.get("timestamp", ""),
+                        reverse=True,
+                    )[:2]
+                    relevant_memories.extend([m["text"] for m in recent_memories])
 
                 context = {
                     "memories_found": len(relevant_memories),
                     "relevant_context": relevant_memories,
                     "query": query,
-                    "user_id": self.user_id,
+                    "user_id": effective_user_id,
                     "source": "fallback",
                 }
 
