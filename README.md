@@ -242,4 +242,10 @@ For issues or questions:
 
 ---
 
+## 🔗 Repository
+
+**GitHub**: [https://github.com/chittivijay2003/travel-assistant-optimization](https://github.com/chittivijay2003/travel-assistant-optimization)
+
+---
+
 **Built with Google Gemini AI, LangGraph, FastAPI, and Mem0**
